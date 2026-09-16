@@ -16,6 +16,7 @@ from services.coaching.llm import LLMCoach
 from services.coaching.tts import TextToSpeech
 from services.coaching.voice_pipeline import VoicePipeline, autoplay_audio
 
+APP_DIR = os.path.dirname(os.path.abspath(__file__))
   
 def main():
     st.set_page_config(
@@ -25,8 +26,8 @@ def main():
         layout="centered"
     )
 
-    load_css(os.path.join(os.getcwd(), "static", "style.css"))
-    inject_local_font(os.path.join(os.getcwd(), "static", "AdobeClean.otf"), "AdobeClean")
+    load_css(os.path.join(APP_DIR, "static", "style.css"))
+    inject_local_font(os.path.join(APP_DIR, "static", "AdobeClean.otf"), "AdobeClean")
 
     init_db()
 
